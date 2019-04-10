@@ -172,7 +172,7 @@ def generate_transitions_and_states(current_state,quantities_list):
 
 					new_state_list_inf_status_Neg_1 = deepcopy(new_state)
 					
-					new_state_list_inf_status_Neg_1.state_vals[1][1] = findPrevDerivative(1,current_state.state_vals[1][1],quantities_list)
+					new_state_list_inf_status_Neg_1.state_vals[1cd][1] = findPrevDerivative(1,current_state.state_vals[1][1],quantities_list)
 
 
 					new_state_list_inf_status_Neg_1 = propogateChangesByPropotionalities(new_state_list_inf_status_Neg_1,1,quantities_list)
