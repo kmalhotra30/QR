@@ -4,7 +4,7 @@ class Quantity:
 
 
 		self.name = name
-		self.derivative_space = ['+','0','-']
+		self.derivative_space = ['-','0','+']
 		self.quantity_space = quantity_space
 		self.is_exogenous = is_exogenous
 
