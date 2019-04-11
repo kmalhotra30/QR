@@ -23,22 +23,9 @@ initial_state = State(quantities_list)
 
 # Setting initial state
 
-initial_state.state_vals[0][0] = '0'
-initial_state.state_vals[0][1] = '0'
-
-initial_state.state_vals[1][0] = '0'
-initial_state.state_vals[1][1] = '0'
-
-initial_state.state_vals[2][0] = '0'
-initial_state.state_vals[2][1] = '0'
-
-if extra == True:
-
-	initial_state.state_vals[3][0] = '0'
-	initial_state.state_vals[3][1] = '0'
-
-	initial_state.state_vals[4][0] = '0'
-	initial_state.state_vals[4][1] = '0'
+for idx,quantity in enumerate(quantities_list):
+	initial_state.state_vals[idx][0] = '0'
+	initial_state.state_vals[idx][1] = '0'
 def generate_transitions_and_states(current_state,quantities_list):
 
 	queue = [] 
