@@ -1,4 +1,5 @@
 from Quantity import Quantity
+import sys
 
 sign_map = {'+':1,'Max':1,'0':0,'-':-1}
 inverse_priority_sign_map = {1:'+',2:'Max',0:'0',-1:'-'}
@@ -319,11 +320,13 @@ def create_quantities_for_the_model_extra():
 	height_obj = Quantity('Height',quantity_space_height,height_is_exogenous,influences_to_height,influences_from_height,propotionalities_to_height,propotionalities_from_height
 		,value_correspondences_from_height,value_correspondences_to_height)
 
-	pressure_obj = Quantity('Height',quantity_space_pressure,pressure_is_exogenous,influences_to_pressure,influences_from_pressure,propotionalities_to_pressure,propotionalities_from_pressure
+	pressure_obj = Quantity('Pressure',quantity_space_pressure,pressure_is_exogenous,influences_to_pressure,influences_from_pressure,propotionalities_to_pressure,propotionalities_from_pressure
 		,value_correspondences_from_pressure,value_correspondences_to_pressure)
 
 
 	quantities_list = [inflow_obj,volume_obj,outflow_obj,height_obj,pressure_obj]
+
+	
 	return quantities_list
 
 def is_ambigious(idx,state_tuple,quantities_list):
@@ -365,7 +368,18 @@ def getKeyByValue(dictionary,value):
 	key = list(dictionary.keys())[list(dictionary.values()).index(value)]
 	return key
 	
-	
+def sysArgParse():
+    # Parsing System Arguments for running heuristics
+    sysArguments = sys.argv
+    extra = False
+    if len(sysArguments)>=2:
+	    extra = (sys.argv[1]).split('=')[-1]
+	    
+	    if extra in ['True','true','1']: 
+	        extra = True
+	    else:
+	        extra = False
 
+    return extra
 
 

@@ -2,89 +2,152 @@
 digraph {
 	layout=dot splines=true
 	1 [label="State : 1
-('0', '0')
-('0', '0')
-('0', '0')" color=black shape=box]
+Inflow : ('0', '0')
+Volume : ('0', '0')
+Outflow : ('0', '0')
+Height : ('0', '0')
+Pressure : ('0', '0')
+" color=black shape=box]
 	2 [label="State : 2
-('0', '+')
-('0', '0')
-('0', '0')" color=black shape=box]
+Inflow : ('0', '+')
+Volume : ('0', '0')
+Outflow : ('0', '0')
+Height : ('0', '0')
+Pressure : ('0', '0')
+" color=black shape=box]
 	3 [label="State : 3
-('+', '+')
-('0', '+')
-('0', '+')" color=black shape=box]
+Inflow : ('+', '+')
+Volume : ('0', '+')
+Outflow : ('0', '+')
+Height : ('0', '+')
+Pressure : ('0', '+')
+" color=black shape=box]
 	4 [label="State : 4
-('+', '0')
-('0', '+')
-('0', '+')" color=black shape=box]
+Inflow : ('+', '0')
+Volume : ('0', '+')
+Outflow : ('0', '+')
+Height : ('0', '+')
+Pressure : ('0', '+')
+" color=black shape=box]
 	5 [label="State : 5
-('+', '+')
-('+', '0')
-('+', '0')" color=black shape=box]
+Inflow : ('+', '+')
+Volume : ('+', '0')
+Outflow : ('+', '0')
+Height : ('+', '0')
+Pressure : ('+', '0')
+" color=black shape=box]
 	6 [label="State : 6
-('+', '+')
-('+', '+')
-('+', '+')" color=black shape=box]
+Inflow : ('+', '+')
+Volume : ('+', '+')
+Outflow : ('+', '+')
+Height : ('+', '+')
+Pressure : ('+', '+')
+" color=black shape=box]
 	7 [label="State : 7
-('+', '0')
-('+', '0')
-('+', '0')" color=black shape=box]
+Inflow : ('+', '0')
+Volume : ('+', '0')
+Outflow : ('+', '0')
+Height : ('+', '0')
+Pressure : ('+', '0')
+" color=black shape=box]
 	8 [label="State : 8
-('+', '0')
-('+', '+')
-('+', '+')" color=black shape=box]
+Inflow : ('+', '0')
+Volume : ('+', '+')
+Outflow : ('+', '+')
+Height : ('+', '+')
+Pressure : ('+', '+')
+" color=black shape=box]
 	9 [label="State : 9
-('+', '-')
-('+', '0')
-('+', '0')" color=black shape=box]
+Inflow : ('+', '-')
+Volume : ('+', '0')
+Outflow : ('+', '0')
+Height : ('+', '0')
+Pressure : ('+', '0')
+" color=black shape=box]
 	10 [label="State : 10
-('+', '-')
-('+', '+')
-('+', '+')" color=black shape=box]
+Inflow : ('+', '-')
+Volume : ('+', '+')
+Outflow : ('+', '+')
+Height : ('+', '+')
+Pressure : ('+', '+')
+" color=black shape=box]
 	11 [label="State : 11
-('+', '+')
-('Max', '0')
-('Max', '0')" color=black shape=box]
+Inflow : ('+', '+')
+Volume : ('Max', '0')
+Outflow : ('Max', '0')
+Height : ('Max', '0')
+Pressure : ('Max', '0')
+" color=black shape=box]
 	12 [label="State : 12
-('+', '0')
-('Max', '0')
-('Max', '0')" color=black shape=box]
+Inflow : ('+', '0')
+Volume : ('Max', '0')
+Outflow : ('Max', '0')
+Height : ('Max', '0')
+Pressure : ('Max', '0')
+" color=black shape=box]
 	13 [label="State : 13
-('+', '-')
-('Max', '0')
-('Max', '0')" color=black shape=box]
+Inflow : ('+', '-')
+Volume : ('Max', '0')
+Outflow : ('Max', '0')
+Height : ('Max', '0')
+Pressure : ('Max', '0')
+" color=black shape=box]
 	14 [label="State : 14
-('0', '0')
-('+', '-')
-('+', '-')" color=black shape=box]
+Inflow : ('0', '0')
+Volume : ('+', '-')
+Outflow : ('+', '-')
+Height : ('+', '-')
+Pressure : ('+', '-')
+" color=black shape=box]
 	15 [label="State : 15
-('+', '-')
-('+', '-')
-('+', '-')" color=black shape=box]
+Inflow : ('+', '-')
+Volume : ('+', '-')
+Outflow : ('+', '-')
+Height : ('+', '-')
+Pressure : ('+', '-')
+" color=black shape=box]
 	16 [label="State : 16
-('+', '0')
-('+', '-')
-('+', '-')" color=black shape=box]
+Inflow : ('+', '0')
+Volume : ('+', '-')
+Outflow : ('+', '-')
+Height : ('+', '-')
+Pressure : ('+', '-')
+" color=black shape=box]
 	17 [label="State : 17
-('0', '0')
-('Max', '-')
-('Max', '-')" color=black shape=box]
+Inflow : ('0', '0')
+Volume : ('Max', '-')
+Outflow : ('Max', '-')
+Height : ('Max', '-')
+Pressure : ('Max', '-')
+" color=black shape=box]
 	18 [label="State : 18
-('+', '-')
-('Max', '-')
-('Max', '-')" color=black shape=box]
+Inflow : ('+', '-')
+Volume : ('Max', '-')
+Outflow : ('Max', '-')
+Height : ('Max', '-')
+Pressure : ('Max', '-')
+" color=black shape=box]
 	19 [label="State : 19
-('+', '0')
-('Max', '-')
-('Max', '-')" color=black shape=box]
+Inflow : ('+', '0')
+Volume : ('Max', '-')
+Outflow : ('Max', '-')
+Height : ('Max', '-')
+Pressure : ('Max', '-')
+" color=black shape=box]
 	20 [label="State : 20
-('0', '+')
-('+', '-')
-('+', '-')" color=black shape=box]
+Inflow : ('0', '+')
+Volume : ('+', '-')
+Outflow : ('+', '-')
+Height : ('+', '-')
+Pressure : ('+', '-')
+" color=black shape=box]
 	21 [label="State : 21
-('+', '+')
-('+', '-')
-('+', '-')" color=black shape=box]
+Inflow : ('+', '+')
+Volume : ('+', '-')
+Outflow : ('+', '-')
+Height : ('+', '-')
+Pressure : ('+', '-')
+" color=black shape=box]
 	1 -> 2 [color=blue constraint=true]
 	2 -> 3 [color=black constraint=true]
 	2 -> 4 [color=blue constraint=true]

@@ -6,19 +6,20 @@ import matplotlib.pyplot as plt
 from graphviz import Digraph,Graph
 from math import *
 
-
+extra = sysArgParse()
 
 is_exogenous = True # To toggle exogenous behaviour on or off
 unique_state_dict = {} # To store all states against their unique IDs
 edges = {} # To store all edges
 state_counter = [1] # Tracker for number of states , using a list to incur changes by reference
 exogenous_edges = {}
-quantities_list = create_quantities_for_the_model() #List of objects in the state
-#quantities_list = create_quantities_for_the_model_extra()
+if extra == False:
+	quantities_list = create_quantities_for_the_model() #List of objects in the state
+if extra == True:
+	quantities_list = create_quantities_for_the_model_extra()
 exogenous_nodes = {}
 
 initial_state = State(quantities_list) 
-
 
 # Setting initial state
 
@@ -31,11 +32,13 @@ initial_state.state_vals[1][1] = '0'
 initial_state.state_vals[2][0] = '0'
 initial_state.state_vals[2][1] = '0'
 
-# initial_state.state_vals[3][0] = '0'
-# initial_state.state_vals[3][1] = '0'
+if extra == True:
 
-# initial_state.state_vals[4][0] = '0'
-# initial_state.state_vals[4][1] = '0'
+	initial_state.state_vals[3][0] = '0'
+	initial_state.state_vals[3][1] = '0'
+
+	initial_state.state_vals[4][0] = '0'
+	initial_state.state_vals[4][1] = '0'
 def generate_transitions_and_states(current_state,quantities_list):
 
 	queue = [] 
@@ -443,7 +446,7 @@ def check_validity_add(list_to_be_added_into,new_state,quantities_list):
 def generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_list):
 
 
-	intra_trace_file = open("./output/intra_state_trace.txt","a+")
+	intra_trace_file = open("./output/intra_state_trace.txt","w+")
 	for state_tuple in unique_state_dict:
 
 		state_id = unique_state_dict[state_tuple]
@@ -451,7 +454,7 @@ def generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_
 
 	intra_trace_file.close()
 
-	inter_trace_file = open("./output/inter_state_trace.txt","a+")
+	inter_trace_file = open("./output/inter_state_trace.txt","w+")
 
 	for node_tuple in unique_state_dict:
 
@@ -473,7 +476,13 @@ dot.attr(layout='dot',splines='true')
 for node in unique_state_dict:
 
 	state_tuple = node
-	dot.node(str(unique_state_dict[node]),"State : " + str(str(unique_state_dict[node])) + "\n"+ str(str(state_tuple[0]) + "\n" + str(state_tuple[1]) + "\n" + str(state_tuple[2])),shape='box',color="black")
+	node_string = "State : " + str(unique_state_dict[node]) + "\n"
+
+	for idx,quantity in enumerate(quantities_list):
+
+		node_string += quantity.name + " : " + str(state_tuple[idx]) + "\n" 
+	
+	dot.node(str(unique_state_dict[node]),node_string,shape='box',color="black")
 
 count_edge = 0
 for node in edges:
