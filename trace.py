@@ -1,15 +1,88 @@
-def generate_intra_state_trace(state_tuple,quantities_list):
+from helperFunctions import *
 
-	trace = ""
-	if state_tuple[1][1] == '+':
+grad_MAP = {'+':'increasing','-':'decreasing','0':'steady'}
+mag_MAP = {'+':'positive','-':'negative','Max':'maximum','0':'zero'}
+inf_MAP = {'+':'a positive dominant','0':'no dominant','-':'a negative dominant'}
 
-		trace += "There is more water flowing in than flowing out, which causes the volume and outflow to increase!"
-	elif state_tuple[1][1] == '0':
+def generate_intra_state_trace(state_id,quantities_list,unique_state_dict):
 
-		trace += "The amount of water flowing in is equal to the amount of water flowing out, which causes the volume and outflow to stay steady!"
+    state_tuple = getKeyByValue(unique_state_dict,state_id)
+    trace = ""
+    for idx,quantity in enumerate(quantities_list):
 
-	else:
+        if quantity.is_exogenous == True:
 
-		trace += "The amount of water flowing out is more than the amount of water flowing in, which causes the volume and outflow to decrease"
+            continue
 
-	return trace
+        else:
+
+            if is_ambigious(idx,state_tuple,quantities_list) == 1:
+
+                trace+= quantity.name + " has " + inf_MAP[state_tuple[idx][1]] + " influence and is " + grad_MAP[state_tuple[idx][1]] + '.'
+
+
+            else:
+
+                influences_to_quantity = quantity.influences_to_quantity
+                
+                if len(influences_to_quantity) > 0:
+
+                    trace+= quantity.name + " is " + grad_MAP[state_tuple[idx][1]] + " because of influences from"
+                    for (inf_idx,inf) in enumerate(influences_to_quantity):
+
+                        trace+= " " + str(quantities_list[inf[1]].name)
+                        if inf_idx == len(influences_to_quantity) -1 :
+                            continue
+                        if inf_idx == len(influences_to_quantity) - 2:
+                            trace+= " and"
+                        else:
+                            trace+= " ,"
+
+                    trace += "."
+                
+                propotionalities_to_quantity = quantity.propotionalities_to_quantity
+                
+                if len(propotionalities_to_quantity) > 0:
+
+                    trace+= quantity.name + " is " + grad_MAP[state_tuple[idx][1]] + " because of propotionalities from"
+
+                    for (prop_idx,prop) in enumerate(propotionalities_to_quantity):
+
+                        trace+= " " + str(quantities_list[prop[1]].name)
+                        if prop_idx == len(propotionalities_to_quantity) -1 :
+                            continue
+                        if prop_idx == len(propotionalities_to_quantity) - 2:
+                            trace+= " and"
+                        else:
+                            trace+= " ,"
+
+                    trace += "."
+
+    return trace
+
+
+def generate_inter_state_trace(state_id_from,state_id_to,unique_state_dict,quantities_list,exogenous_edges,exogenous_nodes):
+
+    state_tuple_from = getKeyByValue(unique_state_dict,state_id_from)
+    state_tuple_to = getKeyByValue(unique_state_dict,state_id_to)
+    
+    trace=""
+    for idx,quantity in enumerate(quantities_list):
+
+        if quantity.is_exogenous == True:
+
+            if state_tuple_from in exogenous_edges:
+
+                if state_tuple_to in exogenous_nodes and state_tuple_to in exogenous_edges[state_tuple_from]:
+
+                    trace+= "Due to exogenous factors, " + quantities_list[idx].name + " is " + grad_MAP[state_tuple_to[idx][1]] + "."
+
+
+        if state_tuple_from[idx][0]!=state_tuple_to[idx][0]:
+
+            trace+= "Magnitude of " + quantity.name + " has changed from " + mag_MAP[state_tuple_from[idx][0]] + " to " + mag_MAP[state_tuple_to[idx][0]] + "."
+
+    return trace
+
+
+    

@@ -440,6 +440,31 @@ def check_validity_add(list_to_be_added_into,new_state,quantities_list):
 
 	return False	
 
+def generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_list):
+
+
+	intra_trace_file = open("./output/intra_state_trace.txt","a+")
+	for state_tuple in unique_state_dict:
+
+		state_id = unique_state_dict[state_tuple]
+		intra_trace_file.write("State Id " + str(state_id) + " : " + generate_intra_state_trace(state_id,quantities_list,unique_state_dict) + "\n")
+
+	intra_trace_file.close()
+
+	inter_trace_file = open("./output/inter_state_trace.txt","a+")
+
+	for node_tuple in unique_state_dict:
+
+		node_id = unique_state_dict[node_tuple]
+
+		for e in edges[node_id]:
+
+			inter_trace_file.write("Tranition from State Id " + str(node_id) + " to " + str(e) + " : " + generate_inter_state_trace(node_id,e,unique_state_dict,quantities_list,exogenous_edges,exogenous_nodes) + "\n")
+
+	inter_trace_file.close()
+
+
+
 
 generate_transitions_and_states(initial_state,quantities_list)
 
@@ -448,34 +473,34 @@ dot.attr(layout='dot',splines='true')
 for node in unique_state_dict:
 
 	state_tuple = node
-	dot.node(str(unique_state_dict[node]),"State : " + str(str(unique_state_dict[node])) + "\n"+ str(str(state_tuple[0]) + "\n" + str(state_tuple[1]) + "\n" + str(state_tuple[2])),shape='box',color="black",tooltip = generate_intra_state_trace(state_tuple,quantities_list))
+	dot.node(str(unique_state_dict[node]),"State : " + str(str(unique_state_dict[node])) + "\n"+ str(str(state_tuple[0]) + "\n" + str(state_tuple[1]) + "\n" + str(state_tuple[2])),shape='box',color="black")
 
 count_edge = 0
 for node in edges:
 
-	node_tuple = list(unique_state_dict.keys())[list(unique_state_dict.values()).index(node)]
+	node_tuple = getKeyByValue(unique_state_dict,node)
+	count_edge += len(edges[node])
 	for e in edges[node]:
 
-		edge_tuple = list(unique_state_dict.keys())[list(unique_state_dict.values()).index(e)]
+		edge_tuple = getKeyByValue(unique_state_dict,e)
+		#edge_tuple = list(unique_state_dict.keys())[list(unique_state_dict.values()).index(e)]
 		if node_tuple in exogenous_edges:
 
 			if edge_tuple in exogenous_nodes and edge_tuple in exogenous_edges[node_tuple]:
 
-				count_edge += 1
 				dot.edge(str(node), str(e), constraint='true',color='blue')
 			else:
 
-				count_edge += 1
 				dot.edge(str(node), str(e), constraint='true',color='black')
 		else:
 
-			count_edge += 1
 			dot.edge(str(node), str(e), constraint='true',color='black')
 #dot.render()
-dot.render('test-output/spaghetti.gv', view=True)
+dot.render('output/state_graph.gv', view=True)
 
-# for state_tuple in unique_state_dict:
+generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_list)
 
-# 	generate_intra_state_trace(state_tuple,quantities_list)
+print("Number of states : ",len(unique_state_dict))
+print("Number of edges : ",count_edge)
 
-print(count_edge)
+

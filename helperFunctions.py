@@ -326,15 +326,15 @@ def create_quantities_for_the_model_extra():
 	quantities_list = [inflow_obj,volume_obj,outflow_obj,height_obj,pressure_obj]
 	return quantities_list
 
-def is_ambigious(idx,new_state,quantities_list):
+def is_ambigious(idx,state_tuple,quantities_list):
 
 	flag = 0
 	influences_to_quantity = quantities_list[idx].influences_to_quantity
 	if len(influences_to_quantity) <= 0:
 		return flag
-	prev_inf = influences_to_quantity[0][2] * new_state.state_vals[influences_to_quantity[0][1]][0]
+	prev_inf = influences_to_quantity[0][2] * sign_map[state_tuple[influences_to_quantity[0][1]][0]]
 	for index in range(1,len(influences_to_quantity)):
-		new_inf = influences_to_quantity[index][2] * new_state.state_vals[influences_to_quantity[index][1]][0]
+		new_inf = influences_to_quantity[index][2] * sign_map[state_tuple[influences_to_quantity[index][1]][0]]
 
 		if new_inf!=prev_inf:
 
@@ -359,6 +359,12 @@ def getInfluenceStatusNonAmbigious(idx,new_states,quantities_list):
 		inf_status[0]+= inf[2] * sign_map[new_state.state_vals[inf[1]][0]]
 
 	return inf_status	
+
+def getKeyByValue(dictionary,value):
+
+	key = list(dictionary.keys())[list(dictionary.values()).index(value)]
+	return key
+	
 	
 
 
