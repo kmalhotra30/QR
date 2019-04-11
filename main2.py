@@ -449,7 +449,7 @@ def generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_
 
 		for e in edges[node_id]:
 
-			inter_trace_file.write("Tranition from State Id " + str(node_id) + " to " + str(e) + " : " + generate_inter_state_trace(node_id,e,unique_state_dict,quantities_list,exogenous_edges,exogenous_nodes) + "\n")
+			inter_trace_file.write("Transition from State Id " + str(node_id) + " to " + str(e) + " : " + generate_inter_state_trace(node_id,e,unique_state_dict,quantities_list,exogenous_edges,exogenous_nodes) + "\n")
 
 	inter_trace_file.close()
 

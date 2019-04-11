@@ -18,7 +18,7 @@ def generate_intra_state_trace(state_id,quantities_list,unique_state_dict):
 
             if is_ambigious(idx,state_tuple,quantities_list) == 1:
 
-                trace+= quantity.name + " has " + inf_MAP[state_tuple[idx][1]] + " influence and is " + grad_MAP[state_tuple[idx][1]] + '.'
+                trace+= quantity.name + " has " + inf_MAP[state_tuple[idx][1]] + " influence and is " + grad_MAP[state_tuple[idx][1]] + '. '
 
 
             else:
@@ -38,7 +38,7 @@ def generate_intra_state_trace(state_id,quantities_list,unique_state_dict):
                         else:
                             trace+= " ,"
 
-                    trace += "."
+                    trace += ". "
                 
                 propotionalities_to_quantity = quantity.propotionalities_to_quantity
                 
@@ -56,7 +56,7 @@ def generate_intra_state_trace(state_id,quantities_list,unique_state_dict):
                         else:
                             trace+= " ,"
 
-                    trace += "."
+                    trace += ". "
 
     return trace
 
@@ -77,13 +77,13 @@ def generate_inter_state_trace(state_id_from,state_id_to,unique_state_dict,quant
                 if state_tuple_to in exogenous_nodes and state_tuple_to in exogenous_edges[state_tuple_from]:
 
                     flag = 1
-                    trace+= "Due to exogenous factors, " + quantities_list[idx].name + " is " + grad_MAP[state_tuple_to[idx][1]] + "."
+                    trace+= "Due to exogenous factors, " + quantities_list[idx].name + " is " + grad_MAP[state_tuple_to[idx][1]] + ". "
 
 
         if state_tuple_from[idx][0]!=state_tuple_to[idx][0]:
 
             flag = 1
-            trace+= "Magnitude of " + quantity.name + " has changed from " + mag_MAP[state_tuple_from[idx][0]] + " to " + mag_MAP[state_tuple_to[idx][0]] + "."
+            trace+= "Magnitude of " + quantity.name + " has changed from " + mag_MAP[state_tuple_from[idx][0]] + " to " + mag_MAP[state_tuple_to[idx][0]] + ". "
 
     if flag == 0:
 
@@ -97,7 +97,7 @@ def generate_inter_state_trace(state_id_from,state_id_to,unique_state_dict,quant
                     trace+= quantity.name +" is " + grad_MAP[state_tuple_to[idx][1]] + ","
 
         trace = trace[:-1]
-        trace = trace + "."            
+        trace = trace + ". "            
 
     return trace
 
