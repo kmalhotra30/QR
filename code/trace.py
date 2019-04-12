@@ -44,7 +44,7 @@ def generate_intra_state_trace(state_id,quantities_list,unique_state_dict):
                 
                 if len(propotionalities_to_quantity) > 0:
 
-                    trace+= quantity.name + " is " + grad_MAP[state_tuple[idx][1]] + " because of propotionality from"
+                    trace+= quantity.name + " is " + grad_MAP[state_tuple[idx][1]] + " because of proportionality from"
 
                     for (prop_idx,prop) in enumerate(propotionalities_to_quantity):
 
@@ -87,7 +87,7 @@ def generate_inter_state_trace(state_id_from,state_id_to,unique_state_dict,quant
 
     if flag == 0:
 
-        trace += "There is no change in Magnitude, but due to Influences and Propotionality, "
+        trace += "There is no change in Magnitude, but due to Influences and Proportionality, "
         for idx,quantity in enumerate(quantities_list):
 
             if quantity.is_exogenous == False:

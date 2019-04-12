@@ -11,17 +11,17 @@ Transition from State Id 4 to 5 : Due to exogenous factors, Inflow is increasing
 Transition from State Id 4 to 9 : Due to exogenous factors, Inflow is decreasing. Magnitude of Volume has changed from zero to positive. Magnitude of Outflow has changed from zero to positive. 
 Transition from State Id 4 to 6 : Due to exogenous factors, Inflow is increasing. Magnitude of Volume has changed from zero to positive. Magnitude of Outflow has changed from zero to positive. 
 Transition from State Id 4 to 10 : Due to exogenous factors, Inflow is decreasing. Magnitude of Volume has changed from zero to positive. Magnitude of Outflow has changed from zero to positive. 
-Transition from State Id 5 to 6 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is increasing,Outflow is increasing. 
+Transition from State Id 5 to 6 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is increasing,Outflow is increasing. 
 Transition from State Id 5 to 8 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 6 to 11 : Magnitude of Volume has changed from positive to maximum. Magnitude of Outflow has changed from positive to maximum. 
-Transition from State Id 6 to 5 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is steady,Outflow is steady. 
+Transition from State Id 6 to 5 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is steady,Outflow is steady. 
 Transition from State Id 6 to 12 : Due to exogenous factors, Inflow is steady. Magnitude of Volume has changed from positive to maximum. Magnitude of Outflow has changed from positive to maximum. 
 Transition from State Id 6 to 7 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 6 to 8 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 7 to 5 : Due to exogenous factors, Inflow is increasing. 
 Transition from State Id 7 to 9 : Due to exogenous factors, Inflow is decreasing. 
 Transition from State Id 8 to 12 : Magnitude of Volume has changed from positive to maximum. Magnitude of Outflow has changed from positive to maximum. 
-Transition from State Id 8 to 7 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is steady,Outflow is steady. 
+Transition from State Id 8 to 7 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is steady,Outflow is steady. 
 Transition from State Id 8 to 11 : Due to exogenous factors, Inflow is increasing. Magnitude of Volume has changed from positive to maximum. Magnitude of Outflow has changed from positive to maximum. 
 Transition from State Id 8 to 13 : Due to exogenous factors, Inflow is decreasing. Magnitude of Volume has changed from positive to maximum. Magnitude of Outflow has changed from positive to maximum. 
 Transition from State Id 8 to 5 : Due to exogenous factors, Inflow is increasing. 
@@ -29,10 +29,10 @@ Transition from State Id 8 to 9 : Due to exogenous factors, Inflow is decreasing
 Transition from State Id 8 to 6 : Due to exogenous factors, Inflow is increasing. 
 Transition from State Id 8 to 10 : Due to exogenous factors, Inflow is decreasing. 
 Transition from State Id 9 to 14 : Magnitude of Inflow has changed from positive to zero. 
-Transition from State Id 9 to 15 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is decreasing,Outflow is decreasing. 
+Transition from State Id 9 to 15 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is decreasing,Outflow is decreasing. 
 Transition from State Id 9 to 16 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 10 to 13 : Magnitude of Volume has changed from positive to maximum. Magnitude of Outflow has changed from positive to maximum. 
-Transition from State Id 10 to 9 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is steady,Outflow is steady. 
+Transition from State Id 10 to 9 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is steady,Outflow is steady. 
 Transition from State Id 10 to 12 : Due to exogenous factors, Inflow is steady. Magnitude of Volume has changed from positive to maximum. Magnitude of Outflow has changed from positive to maximum. 
 Transition from State Id 10 to 7 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 10 to 8 : Due to exogenous factors, Inflow is steady. 
@@ -40,17 +40,17 @@ Transition from State Id 11 to 12 : Due to exogenous factors, Inflow is steady.
 Transition from State Id 12 to 11 : Due to exogenous factors, Inflow is increasing. 
 Transition from State Id 12 to 13 : Due to exogenous factors, Inflow is decreasing. 
 Transition from State Id 13 to 17 : Magnitude of Inflow has changed from positive to zero. 
-Transition from State Id 13 to 18 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is decreasing,Outflow is decreasing. 
+Transition from State Id 13 to 18 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is decreasing,Outflow is decreasing. 
 Transition from State Id 13 to 19 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 14 to 1 : Magnitude of Volume has changed from positive to zero. Magnitude of Outflow has changed from positive to zero. 
 Transition from State Id 14 to 2 : Due to exogenous factors, Inflow is increasing. Magnitude of Volume has changed from positive to zero. Magnitude of Outflow has changed from positive to zero. 
 Transition from State Id 14 to 20 : Due to exogenous factors, Inflow is increasing. 
 Transition from State Id 15 to 1 : Magnitude of Inflow has changed from positive to zero. Magnitude of Volume has changed from positive to zero. Magnitude of Outflow has changed from positive to zero. 
 Transition from State Id 15 to 14 : Magnitude of Inflow has changed from positive to zero. 
-Transition from State Id 15 to 9 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is steady,Outflow is steady. 
+Transition from State Id 15 to 9 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is steady,Outflow is steady. 
 Transition from State Id 15 to 7 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 15 to 16 : Due to exogenous factors, Inflow is steady. 
-Transition from State Id 16 to 7 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is steady,Outflow is steady. 
+Transition from State Id 16 to 7 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is steady,Outflow is steady. 
 Transition from State Id 16 to 5 : Due to exogenous factors, Inflow is increasing. 
 Transition from State Id 16 to 9 : Due to exogenous factors, Inflow is decreasing. 
 Transition from State Id 16 to 21 : Due to exogenous factors, Inflow is increasing. 
@@ -71,6 +71,6 @@ Transition from State Id 20 to 5 : Magnitude of Inflow has changed from zero to 
 Transition from State Id 20 to 21 : Magnitude of Inflow has changed from zero to positive. 
 Transition from State Id 20 to 7 : Due to exogenous factors, Inflow is steady. Magnitude of Inflow has changed from zero to positive. 
 Transition from State Id 20 to 16 : Due to exogenous factors, Inflow is steady. Magnitude of Inflow has changed from zero to positive. 
-Transition from State Id 21 to 5 : There is no change in Magnitude, but due to Influences and Propotionality, Volume is steady,Outflow is steady. 
+Transition from State Id 21 to 5 : There is no change in Magnitude, but due to Influences and Proportionality, Volume is steady,Outflow is steady. 
 Transition from State Id 21 to 7 : Due to exogenous factors, Inflow is steady. 
 Transition from State Id 21 to 16 : Due to exogenous factors, Inflow is steady. 

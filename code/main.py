@@ -433,7 +433,7 @@ def check_validity_add(list_to_be_added_into,new_state,quantities_list):
 def generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_list):
 
 
-	intra_trace_file = open("./output/intra_state_trace.txt","w+")
+	intra_trace_file = open("./files/intra_state_trace.txt","w+")
 	for state_tuple in unique_state_dict:
 
 		state_id = unique_state_dict[state_tuple]
@@ -441,7 +441,7 @@ def generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_
 
 	intra_trace_file.close()
 
-	inter_trace_file = open("./output/inter_state_trace.txt","w+")
+	inter_trace_file = open("./files/inter_state_trace.txt","w+")
 
 	for node_tuple in unique_state_dict:
 
@@ -459,7 +459,19 @@ def generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_
 generate_transitions_and_states(initial_state,quantities_list)
 
 dot = Digraph(comment='The State Graph',format='pdf')
-dot.attr(layout='dot',splines='true')
+dot.attr(layout='dot',
+	newrank = "true",
+	splines='true', 
+	rankdir='LR', 
+	#constraint = "true",
+	# margin = "0.2", 
+	nodesep = "0.40", 
+	#ratio = "compress", 
+	#size = "(500, 500)",
+	#page = "300",
+	ranksep = "0.23",
+	# rank = "same"
+	)
 for node in unique_state_dict:
 
 	state_tuple = node
@@ -492,7 +504,7 @@ for node in edges:
 
 			dot.edge(str(node), str(e), constraint='true',color='black')
 #dot.render()
-dot.render('output/state_graph.gv', view=True)
+dot.render('files/state_graph.gv', view=True)
 
 generate_trace(unique_state_dict,exogenous_edges,exogenous_nodes,quantities_list)
 
