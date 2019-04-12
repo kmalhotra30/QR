@@ -1,9 +1,10 @@
 This is the submission of the Qualitative Reasoning Assignment (KR - 2019).
-
+---------------------------------------------------------------------------
 The code can be found in the `code` directory.
 
 All results can be found in the `output_tasks_folder`.
 
+---------------------------------------------------------------------------------
 To run the module, kindly enter the `code` folder and follow the instructions below :-
 
 
@@ -23,6 +24,8 @@ Inter state Trace file consists of the inter state trace for all the transitions
 The State ID can be referred from the state graph.
 
 
-Extra / Bonus part of the assignment
+-------------------------------------------------------------------------------------------
+
+Extra / Bonus part of the assignment : -
 
 To run the module, type `python main.py extra=True` in the terminal. The output files can be inspected in the `files` folder.
